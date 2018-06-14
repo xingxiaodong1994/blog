@@ -45,7 +45,9 @@
 # 三：在gitHub上新建一个新仓库git-demo-1连接到本地仓库git-demo-1；
 1:打开自己的github页面，点击仓库，进入仓库页面，新建一个仓库；到达下面页面：
 
+<img></img>
+
 找到图中的
-###「…or push an existing repository from the command line」
+ ### 「…or push an existing repository from the command line」
 这一行；复制下面两行代码到git并运行；然后刷新github页面，就链接成功了。
 ## 鼓掌鼓掌鼓掌！！！
