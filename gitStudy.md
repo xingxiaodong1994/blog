@@ -1,24 +1,26 @@
-git使用
-一、git初始化用户名和邮箱
-git config --global user.name 你的英文名
-git config --global user.email 你的邮箱
-git config --global push.default matching
-git config --global core.quotepath false
-git config --global core.editor "vim"
+# git使用
+## 一、git初始化用户名和邮箱
+### git config --global user.name 你的英文名
+### git config --global user.email 你的邮箱
+### git config --global push.default matching
+### git config --global core.quotepath false
+### git config --global core.editor "vim"
 初始化完成后，
-1： 进入$ vi ~/.gitconfig; 查看，
+1： 进入
+### $ vi ~/.gitconfig; 查看，
 按ESC ：q 回车 退出查看；
 或者
-2：$  git config --list  进行查看；
+2：
+### $  git config --list  进行查看；
 
 如果你以前设置有用户名和邮箱，可以按以下两行代码修改或者直接用以前的用户名和邮箱；
-$  git config --global --replace-all user.email "输入你的邮箱" 
-$  git config --global --replace-all user.name "输入你的用户名"
-二、用git创建一个本地仓库
+### $  git config --global --replace-all user.email "输入你的邮箱" 
+### $  git config --global --replace-all user.name "输入你的用户名"
+## 二、用git创建一个本地仓库
 1：创建一个文件夹当做你的本地仓库；命令
-$ mkdir git-demo-1
+### $ mkdir git-demo-1
 2: 进入文件目录；命令
-$ cd git-demo-1
+### $ cd git-demo-1
 3: 创建一个.git目录；命令
 $ git init （此命令会初始化一个Git仓库）
 4: 使用命令 $ ls -la 查看是否创建.git目录
