@@ -21,26 +21,31 @@
 ### $ mkdir git-demo-1
 2: 进入文件目录；命令
 ### $ cd git-demo-1
-3: 创建一个.git目录；命令
-$ git init （此命令会初始化一个Git仓库）
-4: 使用命令 $ ls -la 查看是否创建.git目录
+# 3: 创建一个.git目录；
+命令
+### $ git init （此命令会初始化一个Git仓库）
+4: 使用命令 
+### $ ls -la (查看是否创建.git目录)
 5：在仓库里写入一个文件，例如在命令行输入以下
-$ mkdir css
-$ touch css/style.css
-$ touch index.html
-$ touch 1.txt
+### $ mkdir css
+### $ touch css/style.css
+### $ touch index.html
+### $ touch 1.txt
 这是一个文件夹和三种类型文件；
 接着，可以在文件中写一些内容：打开index.html文件： 
-$ start index.html  （window下git命令）
+### $ start index.html  （window下git命令）
 然后系统会用默认程序打开此文件，然后你在里面修改内容并保存；输入命令:
- 		$ git stats -sb （此命令用来查看此时文件状态）
+ ### $ git stats -sb （此命令用来查看此时文件状态）
 会显示 M index.html (M为红色，表示此文件有变动)；输入命令 
-$ git add index.html （保存此文件到git缓存）
+### $ git add index.html （保存此文件到git缓存）
 输入命令 
-$ git stats -sb 
+### $ git stats -sb 
 会显示 M index.html (M为绿色，表示此文件变动已记录)；输入命令
- $ git commit -m  (提交此次文件修改到git仓库；) 
+ ### $ git commit -m  (提交此次文件修改到git仓库；) 
 三：在gitHub上新建一个新仓库git-demo-1连接到本地仓库git-demo-1；
 1:打开自己的github页面，点击仓库，进入仓库页面，新建一个仓库；到达下面页面：
 
-找到图中的「…or push an existing repository from the command line」这一行；复制下面两行代码到git并运行；然后刷新github页面，就链接成功了。鼓掌鼓掌鼓掌！！！
+找到图中的
+###「…or push an existing repository from the command line」
+这一行；复制下面两行代码到git并运行；然后刷新github页面，就链接成功了。
+## 鼓掌鼓掌鼓掌！！！
