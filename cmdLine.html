@@ -5,21 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>初识命令行</title>
+    <style>
+        h1{text-align: center;}
+        li{list-style: none;}
+        code{font-size: 18px;background: rgb(221, 218, 218);}
+        p{padding-left:2em ;}
+        span{padding-left:2em ;}
+    </style>
 </head>
 <body>
     <h1>Linux基础命令</h1>
     <div>
-        <p>最近刚学了一些Linux基础命令，在这里分享给朋友们。
-        （备注：我这是在window7系统上安装的Gitbash上模拟实现的Linux命令）</p>
+        <p> 最近刚学了一些Linux基础命令，在这里分享给朋友们。
+       （备注：我这是在window7系统上安装的Gitbash上模拟实现的Linux命令）</p>
         <h2>目录（文件夹）操作</h2>
         <ul>
             <li>命令1：（进入桌面） 代码: <code>cd ~/Desktop</code> </li>
             <li>命令2：（创建目录demo_1（文件夹）） 代码：<code>mkdir demo_1</code> </li>
             <li>命令3：（创建多个目录（文件夹）） 代码：<code>mkdir -p demo_2/demo_3</code> </li>
-            <li>备注：如果文件夹名中含特殊字符和空格，需要加引号，代码：<code>mkdir "demo 1"</code> </li>
+            <li><span>备注：如果文件夹名中含特殊字符和空格，需要加引号，代码：<code>mkdir "demo 1"</code></span> </li>
             <li>命令4：（创建多个目录（文件夹）） 代码：<code>mkdir -p demo_2/demo_3</code> </li>
             <li>命令5：（删除桌面下目录demo_2/demo_3（文件夹）） 代码：<code>rm -rf demo_2</code> </li>
-            <li>备注：如果你此时位置就在桌面可以直接用代码： <code> cd demo_1</code></li>
+            <li><span>备注：如果你此时位置就在桌面可以直接用代码： <code> cd demo_1</code></span></li>
             <li>命令6：（返回上级目录） 代码：<code> cd ../</code></li>
             <li>命令7：（进入目录demo_1/demo_2（文件夹）） 代码：<code>cd ~/Desktop</code> </li>
         </ul>
@@ -28,9 +35,9 @@
             <li>命令1：（进入桌面） 代码: <code>cd ~/Desktop</code> </li>
             <li>命令2：（创建一个index.txt文件） 代码: <code>touch index.txt</code> </li>
             <li>命令3：（打开一个index.txt文件） 代码: <code>start index.txt</code> </li>
-            <li>备注：此时你进入了index.txt文件，可以进行编辑。例如写"hello world"然后保存退出TXT文件</li>
+            <li><span>备注：此时你进入了index.txt文件，可以进行编辑。例如写"hello world"然后保存退出TXT文件</span></li>
             <li>命令3：（查看index.txt文件内容） 代码: <code>cat index.txt</code> </li>
-            <li>备注：此时你发现index.txt文件内容"hello world"显示在命令行中。但如果你输入是中文，会出现乱码！！</li>
+            <li><span>备注：此时你发现index.txt文件内容"hello world"显示在命令行中。但如果你输入是中文，会出现乱码！！</span></li>
             <li>命令4：（重命名index.txt文件为1.txt） 代码: <code>mv index.txt 1.txt</code> </li>
             <li>命令5：（查看1.txt文件内容） 代码: <code>cat 1.txt</code> </li>
             <li>命令6：（删除1.txt文件内容） 代码: <code>rm 1.txt</code> </li>
@@ -40,17 +47,17 @@
             <li>命令1：（进入桌面） 代码: <code>cd ~/Desktop</code> </li>
             <li>命令2：（查看桌面上所有目录和文件(不包括隐藏文件和下级文件)） 代码: <code>ls</code> </li>
             <li>命令3：（查看桌面上所有目录和文件(包括隐藏文件和下级文件)） 代码: <code>ls -a</code> </li>
-            <li>备注：隐藏文件为文件名前带"."的文件，你可以创建一个".1.txt"文件，你会发现它在桌面上被隐藏掉了！！
-                但用命令<code>ls -a</code>可以查看到</li>
+            <li><span>备注：隐藏文件为文件名前带"."的文件，你可以创建一个".1.txt"文件，你会发现它在桌面上被隐藏掉了！！
+                但用命令<code>ls -a</code>可以查看到</span></li>
             <li>命令4：（查看桌面上所有目录和文件(不包括隐藏文件和下级文件)）且会显示更多文件信息 代码: <code>ls -l</code> </li>
-            <li>备注：“drwxr-xr-x” 中 "d"表示directory是一个文件 "r"表示可阅读； "w"表示可书写；"x"表示可执行；</li>
+            <li><span>备注：“drwxr-xr-x” 中 "d"表示directory是一个文件 "r"表示可阅读； "w"表示可书写；"x"表示可执行；</span></li>
             <li>命令5：（查看桌面上所有目录和文件(包括隐藏文件和下级文件)）且会显示更多文件信息 代码: <code>ls -l</code> </li>
         
             <li>命令5：（查看1.txt文件内容） 代码: <code>cat 1.txt</code> </li>
             <li>命令6：（删除1.txt文件内容） 代码: <code>rm 1.txt</code> </li>
         </ul>
         <h2>学习更多Linux基础命令</h2>
-        <p>你进入 <a href="https://explainshell.com/">https://explainshell.com/</a>网站</p>
+        <p>  你进入 <a href="https://explainshell.com/" target="view_window">https://explainshell.com/</a>网站</p>
     </div>
 </body>
 </html>
