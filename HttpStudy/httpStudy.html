@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Http入门</title>
+    <style>
+        h1{text-align: center;}
+        li{list-style:none;margin-left:30px;margin-top: 20px;}
+        img{width: 1000px;height: 800px;border: 5px solid skyblue}
+        span{color: rgb(92, 15, 216);}
+    </style>
+</head>
+<body>
+    <div>
+        <h1>HTTP入门</h1>
+        <div>
+            <h2>一：定义</h2>
+            <p>HTTP全称（Hypertext Transfer Protocol）超文本 传输 协议；</p>
+            <ul>
+                <h3>在我们浏览上网时，会进行下面操作</h3>
+                <li>第一步：打开浏览器，我用的是谷歌浏览器，打开后如下图所示：</li>
+                <li><img src="./http1.PNG" alt="图片"></li>
+                <li>第二步：输入网址；例如<span>"https://www.baidu.com"</span></li>
+                <li>此时加载出百度页面，我们就可以浏览网页了。</li>
+            </ul>
+            <ul>
+                <h3>但是实际上，在我们输入网址到加载出页面之间，浏览器是做了许多事情的；
+                    毕竟百度的网页不可能凭空出现。浏览器做了哪些我们不知道的事情呢？</h3> 
+                <li>第一步：你输入网址：<span>"https://www.baidu.com"</span></li>
+                <li>第二步，浏览器会根据你输入的网址，向百度服务器发出一个请求：
+                    说<span>“百度服务器啊！我想浏览你们百度首页”</span></li>
+                <li>第三步，百度服务器会根据你浏览器的请求，做出一个响应：
+                    <span>“好的浏览器，这是我的百度页面，我发送给你”</span></li>
+                <li>第四步：浏览器接受百度服务器发过来的百度页面，显示在浏览器网页上</li>
+                <li>第五步：你就可以浏览百度网页了！</li>
+            </ul>
+            <ul>
+                <h3>这其中浏览器如何发消息，服务器如何做出响应，就是Http协议规定的内容</h3>
+                <li>如果你也和我一样用的谷歌浏览器，我们可以通过以下方式查看这个过程</li>
+                <li>第一步，打开谷歌浏览器，然后右键点击<span>检查</span>,出现下图内容，然后点击
+                图中的<span>Network</span>选项</li>
+                <li><img src="./http2.PNG" alt="图片"></li>
+                <li>第二步，如下图所示，先在地址栏输入网址<span>"https://www.baidu.com"</span></li>
+                <li><img src="./http3.PNG" alt="图片"></li>
+                <li>然后在标红色的第二处输入地址<span>"www.baidu.com"</span>；</li>
+                <li>然后查看右边的<span>"Request Headers"</span>,
+                    别忘了点击<span>"「view source」"</span>按钮</li>
+                <li>你就可以看到第4部分（蓝笔标记的部分），浏览器发送的请求，翻译过来意思就是
+                    <span>“百度服务器啊！我想浏览你们百度首页”</span></li>
+                <li>第三步，如何查看百度服务器的响应呢？，这个更简单，你只需要打开上图的第5部分
+                    <span>"Response Headers"</span>，别忘了点击<span>"「view source」"</span>按钮 </li>
+                <li>你就可以看到第5部分，服务器发送的响应，翻译过来意思就是
+                        <span>“好的浏览器，这是我的百度页面，我发送给你”</span></li>
+                <li>是不是很棒！</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
