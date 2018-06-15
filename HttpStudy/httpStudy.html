@@ -55,6 +55,47 @@
                         <span>“好的浏览器，这是我的百度页面，我发送给你”</span></li>
                 <li>是不是很棒！</li>
             </ul>
+            <ul>
+                 <h3>如果你想要深入了解一下<span>http协议到底写了些啥东西？</span></h3>
+                <li>首先如果你是Windows系统，你需要安装Git这个软件</li>
+                <li>如果你安装了Git，那么我们可以一起开始学习。</li>
+                <li>1：在Git命令行输入<span>curl -s -v -H "xiaodong: xxx" -- "https://www.baidu.com"</span>按回车</li>
+                <li>它会出现很多行代码，你可以看到，刚开始它给你一个百度首页HTML文件，接着很多行以*号开头的注释，<hr>
+                    然后你还会看到以&gt;号开头的6行语句，这就是你发送的请求<hr>
+                    "<hr>
+                    &gt; GET / HTTP/1.1  (第1行，“GET” 表示请求 “/”表示默认路径 “ HTTP/1.1”表示HTTP协议和版本号 )<hr>
+                    &gt; Host: www.baidu.com   （第2行 host表示域名）<hr>
+                    &gt; User-Agent: curl/7.59.0 （第3行 User-Agent表示用户代理 ）<hr>
+                    &gt; Accept: */* （第4行 Accept表示浏览器接受百度服务器传的所有文件）<hr>
+                    &gt; xiaodong: xxx （第5行 无意义，这是我输入命令是自己编的一个属性ﾉ( • ̀ω•́ )✧）<hr>
+                    &gt;                （第6行 空着的一行，和区分下面发的内容）<hr>
+                    "<hr>
+                    通俗翻译就是<span>“百度服务器啊！我想浏览你们百度首页”</span><hr>
+                    然后你还会看到以&lt;号开头的多行语句，这就是你收到的响应<hr>
+                    "<hr>
+                    &lt; HTTP/1.1 200 OK （第1行 HTTP/1.1 表示http协议和版本号 200 状态码表示响应成功 OK 表示成功）<hr>
+                    &lt; Accept-Ranges: bytes （第2行 表示单位是比特）<hr>
+                    &lt; Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform （第3行 我也不清楚啥意思）<hr>
+                    &lt; Connection: Keep-Alive （第4行 我也不清楚啥意思）<hr>
+                    &lt; Content-Length: 2443 （第5行 响应文件大小） <hr>
+                    &lt; Content-Type: text/html （第6行 响应文件类型） <hr>
+                    &lt; Date: Fri, 15 Jun 2018 12:40:14 GMT （第7行 响应日期） <hr>
+                    &lt; Etag: "588603e7-98b" （第8行 什么鬼？） <hr>
+                    &lt; Last-Modified: Mon, 23 Jan 2017 13:23:51 GMT （第8行 最后修改日期） <hr>
+                    &lt; Pragma: no-cache （第10行 我也不清楚啥意思） <hr>
+                    &lt; Server: bfe/1.0.8.18  （第11行 服务器代号）<hr>
+                    &lt; Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/ （第12行 什么鬼？）<hr>
+                    &lt; （第13行 空行为了和下面内容做区分）<hr>
+                    " <hr>
+                 </li>
+                 <li> 通俗翻译就是<span>“好的浏览器，这是我的百度页面，我发送给你”</span><hr></li>
+                 <li>是不是很有趣(･ω<)☆ 你还可以试试以下命令，</li>
+                 <li>2：在Git命令行输入<span>curl -X POST -d "1234567890" -s -v -H "xiaodong: xxx" -- "https://www.baidu.com"</span>按回车</li>
+                 <li>看看返回什么结果？</li>
+                 <h3>上面是我对http的基本印象，如果你想学习更多HTTP协议知识，可以看下面的链接</h3>
+                 <a href=" http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html
+                 " target="_blank">更多HTTP协议知识</a>
+            </ul>
         </div>
     </div>
 </body>
