@@ -41,7 +41,7 @@
 输入命令 
 ### $ git stats -sb 
 会显示 M index.html (M为绿色，表示此文件变动已记录)；输入命令
- ### $ git commit -m  (提交此次文件修改到git仓库；) 
+ ### $ git commit index.html -m "commmit file" (提交此次文件修改到git仓库；) 
 # 三：在gitHub上新建一个新仓库git-demo-1连接到本地仓库git-demo-1；
 1:打开自己的github页面，点击仓库，进入仓库页面，新建一个仓库；到达下面页面：
 
