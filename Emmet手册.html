@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emmet使用入门</title>
+    <style>
+        li{list-style: none;}
+    </style>
+</head>
+<body>
+   <h1>Emmet使用,请查看源代码，直接看HTML文件</h1>
+   <!-- 后代nav>ul>li -->
+   <nav>
+       <ul>
+           <li></li>
+       </ul>
+   </nav>
+   <!-- 兄弟div+p+bq -->
+   <div></div>
+   <p></p>
+   <blockquote></blockquote>
+   <!-- 上级div+div>p>span+em^bq -->
+   <div></div>
+   <div>
+       <p><span></span><em></em></p>
+       <blockquote></blockquote>
+   </div>
+    <!-- 分组（）实例1：div>(header>ul>li*2)+footer>p;实例2：(div>dl>(dt+dd)*3)+footer>p; -->
+   <div>
+       <header>
+           <ul>
+               <li></li>
+               <li></li>
+           </ul>
+       </header>
+       <footer>
+           <p></p>
+       </footer>
+   </div>
+
+   <div>
+       <dl>
+           <dt></dt>
+           <dd></dd>
+           <dt></dt>
+           <dd></dd>
+           <dt></dt>
+           <dd></dd>
+       </dl>
+   </div>
+   <footer>
+       <p></p>
+   </footer>
+   <!-- 乘法* -->
+   <ul>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+   </ul>
+   <!-- 自增$ :ul>li.item$*5-->
+   <ul>
+       <li class="item1"></li>
+       <li class="item2"></li>
+       <li class="item3"></li>
+       <li class="item4"></li>
+       <li class="item5"></li>
+   </ul>
+    <!-- ul>li.item$$$*5 -->
+    <ul>
+        <li class="item001"></li>
+        <li class="item002"></li>
+        <li class="item003"></li>
+        <li class="item004"></li>
+        <li class="item005"></li>
+    </ul>
+    <!-- ul>li.item$@-*5 -->
+    <ul>
+        <li class="item5"></li>
+        <li class="item4"></li>
+        <li class="item3"></li>
+        <li class="item2"></li>
+        <li class="item1"></li>
+    </ul>
+    <!-- ul>li.item$@3*5 -->
+    <ul>
+        <li class="item3"></li>
+        <li class="item4"></li>
+        <li class="item5"></li>
+        <li class="item6"></li>
+        <li class="item7"></li>
+    </ul>
+    <!-- ul>li.item$@-3*5 -->
+    <ul>
+        <li class="item7"></li>
+        <li class="item6"></li>
+        <li class="item5"></li>
+        <li class="item4"></li>
+        <li class="item3"></li>
+    </ul>
+    <!-- h$[title=item$]{Header$}*3 -->
+    <h1 title="item1">Header1</h1>
+    <h2 title="item2">Header2</h2>
+    <h3 title="item3">Header3</h3>
+    <!-- Id缩写#id;class缩写.class -->
+    <h1 id="1"></h1>
+    <h2 id="2"></h2>
+    <h3 id="3"></h3>
+    <!-- p.class1.class2 -->
+    <p class="class1 class2"></p>
+    <!-- 自定义属性[];div[title=hello world] -->
+    <div title="hello" world=""></div>
+    <!-- 文本{}:p{111} -->
+    <p>111</p>
+
+
+
+
+</body>
+</html>
+
+
