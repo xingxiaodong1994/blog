@@ -1,0 +1,61 @@
+
+body{
+    /* 设置盒子为弹性盒子布局 */
+    display: flex;
+    /* 弹性盒子元素在该行的侧轴（纵轴）上居中放置。
+    （如果该行的尺寸小于弹性盒子元素的尺寸，
+    则会向两个方向溢出相同的长度）。 */
+    align-items: center;
+    /* 设置弹性盒子元素在主轴（横轴）的对齐方式。 */
+    justify-content: center;
+    /* 属性规定当内容溢出元素框时发生的事情。
+    scroll和hidden属性最为常用 */
+    overflow: hidden;
+    /* 设置背景为亮灰色 */
+    
+    background-color:lightslategray;
+    /*vw：视窗宽度的百分比 
+    vh：视窗高度的百分比 
+    vmin：当前较小的vw和vh 
+    vmax：当前较大的vw和vh */
+    height: 100vh;
+
+
+
+   /* position: fixed;
+   top: 50%;
+   left:50%; */
+
+}
+.yinyang{
+    display: flex;
+    align-items: center;
+    width: 60vmin;
+    height: 60vmin;
+    border-radius: 50%;
+    /* 度（Degress）。一个圆共360度 */
+
+    /* 90deg = 100grad = 0.25turn
+     ≈ 1.570796326794897rad */
+    /* background: linear-gradient(90deg, #be4c39 50%, transparent 0)
+    0/ 2em 0.25em repeat-x;   */
+    background: linear-gradient(black 50%, white 0);
+}
+    /* 设置伪元素 */
+    .yinyang:before, .yinyang:after {
+        flex:1;
+        height: 50%;
+        height: 10vmin;
+        /* box-sizing: border-box; */
+         border-radius: 50%;
+        background: black;
+        content: ''; 
+
+        border: 10vmin solid white;
+
+
+    }
+    .yinyang:after{
+        background: white;
+        border-color: black;
+    }
