@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>center</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h3{
+            margin: 0;
+            outline: 1px solid gray;
+            text-align: center;
+            padding:10px 0;
+            line-height: 30px;
+            
+
+        }
+        code{
+            color: rgb(170, 170, 224);
+            background: rgba(56, 55, 55, 1);
+           
+            font: normal normal normal 115%/normal Monaco,'Courier New','DejaVu Sans Mono','Bitstream Vera Sans Mono',monospace!important;
+            line-height: 2em;
+            overflow: auto;
+            direction: ltr;
+            border-radius: 5px;
+        }
+        p.p1{padding: 20px;margin: 20px;}
+        .wordcenter{
+            width: 50%;
+            padding: 10px;
+            margin: 0 auto;
+            border: 2px solid greenyellow;
+        }
+
+        
+        .p-center2{ 
+            margin: 0;padding: 0;
+            display: -webkit-box; 
+            -webkit-line-clamp: 2;
+            overflow:hidden;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+
+        }
+        .code{
+            display: inline-block;
+             padding: 10px;
+            color: rgb(170, 170, 224);
+            background: rgba(56, 55, 55, 1);
+            font: normal normal normal 115%/normal Monaco,'Courier New','DejaVu Sans Mono','Bitstream Vera Sans Mono',monospace!important;
+            line-height: 2em;
+            overflow: auto;
+            direction: ltr;
+            border-radius: 5px;
+           
+        }
+        .parent{
+          
+            width: 50%;
+            height :500px;
+             outline: 0.1px solid rgb(0,0,0);
+              overflow: hidden;
+
+            margin: 0 auto;
+            
+            
+        }
+        .child{
+            outline: 2px solid blue;
+            width: 30%;
+            height: 100px;
+            margin: 200px auto;
+          
+
+        }
+        .parent2{
+          
+            width: 50%;
+            height :500px;
+            outline: 0.1px solid rgb(0,0,0);
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          
+          
+      }
+      .child2{
+          outline: 2px solid blue;
+         
+          }
+          .parent3{
+          
+          width: 50%;
+          height :500px;
+          outline: 0.1px solid rgb(0,0,0);
+          margin: 0 auto;
+          display: flex;
+          /* justify-content: center;
+          align-items: center; */
+        
+        
+        }
+        .child3{
+        border: 2px solid greenyellow;
+        border-radius:7px;
+        margin: 30px;
+        flex: 1 1 50px;
+       
+        }
+   </style>  
+</head>
+<body>
+    <h1>居中常用技巧</h1>
+    <section>
+        <h2>一、行内元素居中</h2>
+        <p class="p1">例如下面的标题居中<br>
+            1：左右居中用<br><code>text-align:center;</code><br>
+            2:假设高度50px上下居中，则看一下目前字体行高为25px;则上下padding加12.5px.即<br><code>padding:12.5px 0;</code><br>
+            3:也可以这样：高度50px上下居中，自己设一个行高30px,则上下padding加10px.即<br><code>line-height:30px;padding:10px 0;</code>
+        </p>
+        <h3>H3标题</h3>
+        <p>例如下面的多行文字居中<br>
+            多行文字自动居中。
+        </p>
+        <div class="wordcenter">
+             <p class="p-center">
+                 大家好，这里有许多许多、许多许多、许多许多、许多许多、许多许多、许多许多
+                 许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多
+                 许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多
+                 文字想要居中。
+             </p>   
+         </div> 
+         <p>两行居中其他文字省略<br>
+            1：只需要用<br><div class="code">margin: 0;padding: 0;<br>
+                    display: -webkit-box; <br>
+                    -webkit-line-clamp: 2;/* 2代表行数 */<br>
+                    overflow:hidden;<br>
+                    -webkit-box-orient: vertical;<br>
+                    text-overflow: ellipsis;</div>
+        </p>  
+        <div class="wordcenter">
+                <p class="p-center2">
+                    大家好，这里有许多许多、许多许多、许多许多、许多许多、许多许多、许多许多
+                    许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多
+                    许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多许多
+                    文字想要居中。
+                </p>   
+        </div>  
+        <section>
+                <h2>二、块元素居中</h2>
+                <p> 
+                    <h4>特殊情况</h4>
+                    父、子元素块 定宽、定高（傻逼做法）<br>
+                    1：子元素左右居中<br><code>margin:0 auto;</code><br>
+                    2:子元素上下居中：给父元素加padding<br><code>box-sizing: border-box;<br>
+                        padding :200px 0;</code><br>
+                    或者<br>
+                    1：子元素左右居中<br><code>margin:200px auto;</code><br>
+                    2：父元素加效果(挡住margin，不让其透出父元素)<br>
+                    <code> border: 0.1px solid #fff;/*加透明border*/</code><br>
+                    <code> overflow:hidden;/*加隐藏*/</code><br>
+
+                    或者<br>
+                    1：父元素元素相对定位<br><code>position:relative;</code><br>
+                    2：子元素需要用<br><div class="code">
+                            width: 200px;<br>
+                            height: 100px;<br>
+                            margin: auto;<br>
+                            position:absolute;<br>
+                            top: 0;<br>
+                            left: 0;<br>
+                            right: 0;<br>
+                            bottom: 0;</div>
+                            
+                </p>
+                <div class="parent">
+                    <div class="child">
+                        子元素块
+                    </div>
+                </div>
+                <p>
+                    <h4>实际情况</h4>
+                    父元素定宽高，子元素宽高不定<br>
+                    办法：父元素用flex定位<br><div class="code">
+                            display: flex;<br>
+                            justify-content: center;<br>
+                            align-items: center;</div>
+                </p>
+                <div class="parent2">
+                        <div class="child2">
+                            子元素块
+                        </div>
+                    </div>
+        </section>
+        <section>
+                <p>
+                    <h4>常用布局</h4>
+                    父元素定宽高，子元素多个<br>
+                    办法：父元素flex定位<br><code>display: flex;</code><br>
+                        子元素<br><code>flex:1 1 50px;/*50px最小宽度*/</code><br>                          
+                    </p>
+                    <div class="parent3">
+                            <div class="child3">
+                                子元素块1
+                            </div>
+                            <div class="child3">
+                                    子元素块2
+                            </div>
+                            <div class="child3">
+                                    子元素块3
+                            </div>
+                        </div>
+        </section>
+
+
+
+    </section>
+</body>
+</html>
