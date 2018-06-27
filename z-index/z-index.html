@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Z-index</title>
+    <style>
+        body{
+            background-color: rgb(52, 136, 204);
+            border: 100px solid red;
+        }
+        body .html-1{
+            width: 50%;
+            height: 50vh;
+            margin: 0 auto;
+            background-color: rgba(97, 11, 11, 0.747);
+            border: 50px solid rgba(0, 128, 0, 0.788);
+            margin-bottom: -20px;
+            margin-top: -60px;
+            color:blueviolet;
+        }
+        body .html-2{
+            height: 500px;
+        }
+        .float{
+            border: 5px solid blue;
+            float:left;
+            margin-top: -100px;
+            color:aqua;
+        }
+        span{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>堆叠上下文</h1>
+    1:在根元素HTML这个堆叠上下文中，HTML背景为第一层，border在第二层(这两层永不分离);
+    如果在HTML其上有DIV块，此DIV块也有背景和border,
+    则div块的背景和border 在 HTML的背景和border 上。
+    而两者之上的文字处于同一级别，按照先后顺序覆盖对方
+    最特殊的是浮动元素,如果DIV变成浮动元素，则里面的文字也变成浮动的，脱离文档流，处于内联元素最下层
+    <span> ████████████████████████
+    ██████████████████████████████████████████████████████████████████████</span>
+    <div class="html-1">
+            █████████████████████████████████████████████████████
+           <div class="html-2">
+            
+           </div>
+            
+            █████████████████████████████████████████████████████
+    </div>
+        1:在根元素HTML这个堆叠上下文中，HTML背景为第一层，border在第二层(这两层永不分离);
+        如果在HTML其上有DIV块，此DIV块也有背景和border,
+        则div块的背景和border 在 HTML的背景和border 上。
+        而两者之上的文字处于同一级别，按照先后顺序覆盖对方<span>████████████████████████
+        ██████████████████████████████████████████████████████████████████████</span>
+   <div class="float">
+       浮动的元素<span> ███████████████████████
+        █████████████████████████
+        ████████████████████████
+        ████████████████████████
+        ████████████████████████
+        ████████████████████████
+        ████████████████████████
+        ████████████████████████</span>
+
+   </div>
+</body>
+</html>
