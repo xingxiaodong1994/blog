@@ -136,8 +136,16 @@ figure figcaption p,h2,span,div{
     left: 10%;
     transform: scale(1.2,1.2);opacity: 0;
 }
-.test4 figcaption h2{margin-top: 15%;margin-left: 15%;}
-.test4 figcaption p{margin-top: 5px;margin-left: 15%;}
+.test4 figcaption h2{
+    margin-top: 15%;margin-left: 15%;
+    transform: scale(1.2,1.2);
+    opacity: 0;
+}
+.test4 figcaption p{
+    margin-top: 5px;margin-left: 15%;
+    transform: scale(1.2,1.2);
+    opacity: 0;
+}
 .test4:hover figcaption div{
     transform: scale(1,1);
     opacity: 1;
@@ -145,4 +153,12 @@ figure figcaption p,h2,span,div{
 .test4:hover img{
     opacity: 0.5;
     transform: scale(1.2,1.2);
+}
+.test4:hover figcaption h2{
+    transform: scale(1,1);
+    opacity: 1;
+}
+.test4:hover figcaption p{
+    transform: scale(1,1);
+    opacity: 1;
 }
