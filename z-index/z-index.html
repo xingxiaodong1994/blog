@@ -7,7 +7,7 @@
     <title>Z-index</title>
     <style>
         body{
-            background-color: rgb(52, 136, 204);
+            background-color: rgb(1, 27, 173);
             border: 100px solid red;
         }
         body .html-1{
@@ -24,10 +24,13 @@
             height: 500px;
         }
         .float{
+            position: relative;
             border: 5px solid blue;
-            float:left;
+            /* float:left; */
             margin-top: -100px;
             color:aqua;
+            z-index: -55;
+            margin-left:-20px ;
         }
         span{
             display: inline;

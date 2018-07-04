@@ -1,0 +1,148 @@
+*{
+    margin: 0;padding: 0;
+}
+figure{
+    float:left;
+    position: relative;
+    width: 33.33%;
+    height: 260px;
+    overflow:hidden;
+}
+figure img{
+    opacity: 0.8;
+    transition: all 0.35s;
+}
+figcaption{
+    position: absolute;
+    top:0;
+    left:0;
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace
+}
+figure figcaption p,h2,span,div{
+    transition: all 0.35s;
+}
+
+@media screen and (min-width:601px) and (min-width:1001px){
+    figure{width: 33.33%;}
+}
+@media screen and (max-width:1000px){
+    figure{width: 50%;}
+}
+@media screen and (max-width:600px){
+    figure{width: 100%;}
+}
+.text1{
+    background: #2f0000;
+}
+.text1 figcaption p:nth-of-type(1){
+    transition-delay:0.05s;
+}
+.text1 figcaption p:nth-of-type(2){
+    transition-delay:0.1s;
+}
+.text1 figcaption p:nth-of-type(3){
+    transition-delay:0.15s;
+}
+.text1 figcaption{
+    padding: 20px;
+}
+.text1 figcaption p{
+    background: #fff;
+    color: #333;
+    margin: 5px;
+    text-align: center;
+    transform:translate(-120px,0px);
+}
+.text1:hover figcaption p{
+    transform:translate(0px,0px);
+}
+.text1 img:hover{
+    transform: translate(-50px,0px);
+    opacity: 0.5;
+}
+.test2{
+    background: #333;
+}
+.test2 figcaption{
+    
+    width: 100%;
+    height: 100%;
+}
+.test2 figcaption h2{
+    margin-top:15%;
+    margin-left: 15%;
+}
+.test2 figcaption p{
+    margin-left: 15%;
+    transform: translate(0,50px);
+    opacity: 0;
+}
+.test2 figcaption div{
+    border: 2px solid #fff;
+    width:80%;
+    height:80%;
+    position: absolute;
+    top:10%;
+    left:10%;
+    transform: translate(0px,-300px) rotate(0deg); 
+}
+.test2:hover figcaption div{
+    transform: translate(0px,0px) rotate(360deg);
+}
+.test2:hover figcaption img{
+    opacity: 0.5;
+}
+.test2:hover figcaption p{
+    transform: translate(0px,0px);
+    opacity:1;
+}
+.test3{
+    background: #000;    
+}
+.test3 figcaption{
+    top:20%;
+    left:20%;
+}
+.test3:hover img{
+    opacity: 0.5;
+}
+.test3 figcaption h2{
+    transform: skew(90deg);
+}
+.test3 figcaption p{
+    transform: skew(90deg);
+}
+.test3:hover figcaption h2{
+    transform: skew(0deg);
+}
+.test3:hover figcaption p{
+    transform: skew(0deg);
+    transition-delay: 0.5s; 
+}
+.test4{
+    background: #000;
+}
+.test4 figcaption {
+    width: 100% ;
+    height: 100%;
+}
+.test4 figcaption div{
+    border: 2px solid #fff;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: scale(1.2,1.2);opacity: 0;
+}
+.test4 figcaption h2{margin-top: 15%;margin-left: 15%;}
+.test4 figcaption p{margin-top: 5px;margin-left: 15%;}
+.test4:hover figcaption div{
+    transform: scale(1,1);
+    opacity: 1;
+}
+.test4:hover img{
+    opacity: 0.5;
+    transform: scale(1.2,1.2);
+}
