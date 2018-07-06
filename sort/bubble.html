@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡算法</title>
+</head>
+<body>
+    <script>      
+        var bubble=function bubble(arr){
+            //冒泡算法
+            // 第一步 声明变量与赋值
+            
+            var time;
+            var index;
+            var exchange;
+            //外循环：判断轮数
+            for(let time=1;time<arr.length;time++){
+                //内循环 判断最大值
+                for (let index = 0; index < arr.length-time; index++) {
+                    // if语句 摸头大法
+                    if (arr[index]<arr[index+1]) {
+
+                    } else {
+                         exchange=arr[index];
+                         arr[index]=arr[index+1];
+                         arr[index+1]=exchange;
+                    }
+
+                }
+            }
+            console.log(arr)
+
+        }
+        var a=[6,2,4,5,3,1,15,17,23,7,456];
+        bubble(a);
+    </script>   
+</body>
+</html>
