@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基数排序</title>
+</head>
+<body>
+    <script>
+        var arr=[2,5,67,48,7,36,3,5,7,9,4,6,8,2,6,7,4];
+        var hash={};
+        var brr=[]
+        var number;
+        for(var i=0;i<arr.length;i++){
+            number=arr[i];
+            if(hash[number]==undefined){
+                hash[number]=0;
+            }
+            hash[number]=hash[number]+1
+
+        }
+
+        var max=arr[0];
+        for(var index=0;index+1<arr.length;index++){
+            if(max<arr[index+1]){
+                max=arr[index+1];
+            } 
+        }  
+        for(var j=0;j<=max;j++){
+            if(hash[j]==undefined){
+
+            }else{
+                for(var n=0;n<hash[j];n++){
+                    brr.push(j);
+                }
+            }
+        }
+        console.log(brr);
+        
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

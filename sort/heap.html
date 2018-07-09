@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>堆排序</title>
+</head>
+<body>
+    <script>
+        //堆排序
+        var arr=[16,4,10,14,7,9,3,2,8,1];
+        var a=[];
+        var mid;
+        var num=1;
+        
+        
+        //节点下标
+        //var sub=arr.length-1;
+        
+        //第一次最大堆排序调整
+        //判断数组长度是否大于1
+        
+        for( var length=arr.length;length>1;length--){
+            for( var num=1;num>0;){  
+                num=0; 
+                for(var sub=length;sub>1;sub=sub-2){    
+                    //注意sub是下标+1，对应实际数组值为arr[sub-1]!!!
+                        //判断左右节点
+                        if(sub%2==0){
+                            //这是左节点arr[arr.length-1],其父节点为arr[(arr.length-1)/2]
+                            if(arr[sub-1] > arr[(sub/2)-1]){
+                                //交换父子节点位置
+                                mid=arr[sub-1];
+                                arr[sub]=arr[(sub/2)-1];
+                                arr[(sub/2)-1]=mid;
+                                num++;
+                            }else{
+                                //不交换位置
+                            }
+                            sub=sub+1
+                        }else if(sub%2==1){
+                            //这是右节点
+                            //判断左右节点大小
+                            if(arr[sub-1]>arr[sub-1-1]){
+                                //右节点大，判断右节点与父节点大小
+                                if(arr[sub-1]>arr[((sub-1)/2)-1]){
+                                    //交换父子节点位置
+                                    mid=arr[sub-1];
+                                    arr[sub-1]=arr[((sub-1)/2)-1];
+                                    arr[((sub-1)/2)-1]=mid;
+                                    num++;
+                                }else{
+                                    //不交换位置
+                                }
+                            }else{
+                                 //左节点大，判断左节点与父节点大小
+                                 if(arr[sub-1-1]>arr[((sub-1)/2)-1]){
+                                    //交换父子节点位置
+                                    mid=arr[sub-1-1];
+                                    arr[sub-1-1]=arr[((sub-1)/2)-1];
+                                    arr[((sub-1)/2)-1]=mid;
+                                    num++;
+                                }else{
+                                    //不交换位置
+                                }
+                            }
+                        }
+                    
+                }
+            } 
+            //交换堆顶和堆底元素
+             mid=arr[0];
+             arr[0]=arr[length-1];
+             arr[length-1]=mid;
+            
+        }
+        console.log(arr);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
