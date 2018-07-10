@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #xxx{
+            background: green;
+            display: block;
+            /* display: block; 没用*/
+            /* height: 100vh;等比缩放 */
+        }
+        body{
+            margin: 0px;
+            
+         }
+         .actions{
+             position: fixed;
+             left:0;
+             bottom:0;
+         }
+         .actions>#brush{
+             display: none
+         }
+         .actions.x > #brush{
+             display: inline-block;
+         }
+         .actions.x > #eraser{
+             display: none;
+         }
+
+    </style>
+</head>
+<body>
+    <canvas id='xxx' width="300" height="300"></canvas>
+    <div id="actions" class="actions">
+        <button id='eraser'>橡皮擦</button>
+        <button id='brush'>画笔</button>
+    </div>
+    <script src="main.js"></script>
+
+   
+</body>
+</html>
