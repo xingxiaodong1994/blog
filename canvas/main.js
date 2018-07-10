@@ -25,32 +25,69 @@ brush.onclick=function(){
 function listenToMouse(canvas){     
     var lastPoint={x:undefined,y:undefined}
     var using=false
-    canvas.onmousedown=function(aaa){
-         var x=aaa.clientX;//相对于视口位置！！！
-         var y=aaa.clientY;
-         using=true
-         if(eraserEnabled){   
-             context.clearRect(x-5,y-5,10,10)
-         }else{
-             lastPoint={'x':x,'y':y}
-             // console.log(lastPoint)
-             // drawCircle(x,y,1)
-         }    
-    }
-    canvas.onmousemove=function(aaa){    
-        var x=aaa.clientX;//相对于视口位置！！！
-        var y=aaa.clientY;
-        if(!using){return}
-            if(eraserEnabled){
+    //特性检测
+    if(document.body.ontouchstart!==undefined){
+        canvas.ontouchstart=function(aaa){
+            //console.log('开始摸我了')
+            var x=aaa.touches[0].clientX;//相对于视口位置！！！
+            var y=aaa.touches[0].clientY;
+            //console.log(x,y)
+            using=true
+            if(eraserEnabled){   
                 context.clearRect(x-5,y-5,10,10)
-            }else{ 
-                var newPoint={'x':x,'y':y}
-               // drawCircle(x,y,1)
-                drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
-                lastPoint=newPoint;
-            }           
+            }else{
+                lastPoint={'x':x,'y':y}
+                // console.log(lastPoint)
+                // drawCircle(x,y,1)
+            }    
+        }
+        canvas.ontouchmove=function(aaa){
+           //console.log('边摸边动')
+           var x=aaa.touches[0].clientX;//相对于视口位置！！！
+           var y=aaa.touches[0].clientY;
+           if(!using){return}
+               if(eraserEnabled){
+                   context.clearRect(x-5,y-5,10,10)
+               }else{ 
+                   var newPoint={'x':x,'y':y}
+                  // drawCircle(x,y,1)
+                   drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
+                   lastPoint=newPoint;
+               }    
+        }
+        canvas.ontouchend=function(aaa){
+          //console.log('松')
+          using=false;
+        }
+    }else{
+        canvas.onmousedown=function(aaa){
+            var x=aaa.clientX;//相对于视口位置！！！
+            var y=aaa.clientY;
+            using=true
+            if(eraserEnabled){   
+                context.clearRect(x-5,y-5,10,10)
+            }else{
+                lastPoint={'x':x,'y':y}
+                // console.log(lastPoint)
+                // drawCircle(x,y,1)
+            }    
+       }
+       canvas.onmousemove=function(aaa){    
+           var x=aaa.clientX;//相对于视口位置！！！
+           var y=aaa.clientY;
+           if(!using){return}
+               if(eraserEnabled){
+                   context.clearRect(x-5,y-5,10,10)
+               }else{ 
+                   var newPoint={'x':x,'y':y}
+                  // drawCircle(x,y,1)
+                   drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
+                   lastPoint=newPoint;
+               }           
+       }
+       canvas.onmouseup=function(aaa){ using=false;}   
     }
-    canvas.onmouseup=function(aaa){ using=false;}              
+               
 }        
 function drawCircle(x,y,radius){
     context.beginPath();
@@ -92,7 +129,10 @@ function autoSetCanvasSize(canvas){
      // context.lineTo(300,240)
      // context.lineTo(300,300)
      // context.fill()
+    
 }
+
+
 
 
 
