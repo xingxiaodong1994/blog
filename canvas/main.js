@@ -1,8 +1,3 @@
-// document.body.ontouchstart=function(eee){
-//     eee.preventDefault()
-// }
-
-
 
 /*设置画板宽高*/
 var yyy=document.getElementById('xxx');
