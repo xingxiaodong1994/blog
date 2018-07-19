@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery封装模拟</title>
+    <style>
+        .red{
+            color:red;
+        }
+        .blue{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="item1">选项1</li>
+        <li id="item2">选项2</li>
+        <li id="item3">选项3</li>
+        <li id="item4">选项4</li>
+        <li id="item5">选项5</li>
+    </ul>
+  
+    <script>
+       
+        // window.ffdom={};
+        // ffdom.getSiblings=function getSiblings(node){/*API*/
+        //     var allChildren=node.parentNode.children
+        //     var arr={length:0}
+        //     for(let i=0;i<allChildren.length;i++){
+        //         if(allChildren[i] !== node){
+        //             arr[arr.length]=allChildren[i]
+        //             arr.length +=1
+        //         }
+        //     }
+        //     return arr
+        // }
+
+        // ffdom.addClass=function addClass(node,classes){
+        //     for(let key in classes){
+        //         value=classes[key]
+        //         var methodName=value ? 'add' : 'remove'
+        //         node.classList[methodName](key)
+        //     }
+        // }
+        // ffdom.getSiblings(item3);
+        // ffdom.addClass(item3,{a:true,b:false,c:true})
+
+        // Node.prototype.getSiblings=function(){
+        //     var allChildren=this.parentNode.children
+        //     var arr={length:0}
+        //     for(let i=0;i<allChildren.length;i++){
+        //         if(allChildren[i] !== this){
+        //             arr[arr.length]=allChildren[i]
+        //             arr.length +=1
+        //         }
+        //     }
+        //     return arr
+        // }
+        // Node.prototype.addClass=function(classes){
+        //     classes.forEach((value)=>this.classList.add(value))
+        // }
+        // item3.getSiblings.call(item3)
+        // item3.addClass.call(item3,['a','b','c'])
+
+
+        // window.jQuery=function(nodeOrSelector){
+        //     let node
+        //     if(typeof(nodeOrSelector)==='string'){
+        //         node=document.querySelector(nodeOrSelector);
+        //     }else{
+        //         node=nodeOrSelector;
+        //     }
+        //     return{
+        //         getSiblings:function(){
+        //             var allChildren=node.parentNode.children
+        //             var arr={length:0}
+        //             for(let i=0;i<allChildren.length;i++){
+        //                 if(allChildren[i] !== node){
+        //                     arr[arr.length]=allChildren[i]
+        //                     arr.length +=1
+        //                 }
+        //             }
+        //     return arr
+        //         },
+        //         addClass:function(classes){
+        //             classes.forEach((value)=>node.classList.add(value))
+        //         }
+        //     }
+        // }
+        // var node2 =jQuery('#item3')
+        // console.log(node2.getSiblings())
+        // node2.addClass(['red','b','c'])
+        
+        window.jQuery=function(nodeOrSelector){
+            let nodes={}
+            if(typeof(nodeOrSelector)==='string'){
+               let temp=document.querySelectorAll(nodeOrSelector)
+               for(let i=0;i<temp.length;i++){
+                   nodes[i]=temp[i]
+               }
+               nodes.length=temp.length
+            }else if(nodeOrSelector instanceof (Node)){// true，因为 Object.getPrototypeOf(nodeOrSelector) === Node.prototype
+                nodes={
+                    0:nodeOrSelector,
+                    length:1
+                }
+            }
+            nodes.addClass=function(classes){
+                classes.forEach(
+                    (value)=>{
+                            for(let i=0;i<nodes.length;i++){
+                                nodes[i].classList.add(value)
+                            }
+                        }
+                )
+            }
+            // nodes.getText=function(){
+            //     var texts=[];
+            //     for(let i=0;i<nodes.length;i++){
+            //         texts.push(nodes[i].textContent)
+            //     }
+            //     return texts
+            // }
+            // nodes.setText=function(text){
+            //     for(let i=0;i<nodes.length;i++)
+            //     nodes[i].textContent=text
+            // }
+            nodes.text=function(text){
+                if(text === undefined){
+                    var texts=[];
+                    for(let i=0;i<nodes.length;i++){
+                        texts.push(nodes[i].textContent)
+                    }
+                    return texts 
+                }else{
+                    for(let i=0;i<nodes.length;i++)
+                    nodes[i].textContent=text
+                }
+            }
+            return nodes
+        }
+
+        window.$ = jQuery
+        var $node2 =$('ul>li')
+            $node2.addClass(['blue'])
+            console.log($node2.text())
+            $node2.text('hhh')
+        
+    </script> 
+    
+ 
+
+</body>
+</html>
