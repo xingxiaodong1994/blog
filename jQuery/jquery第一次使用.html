@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery基础知识</title>
+    <style>
+        h1{text-align: center;}
+        span{font-weight: bold}
+        img{
+            height:300px;
+        }
+        img:hover{
+            height:100%
+        }
+    </style>
+    <script src="./jquery3.3.1.js"></script> 
+</head>
+
+<body>
+    <h1>jquery基础知识</h1>
+    <h2>jquery引入方法：</h2>
+    <p>在<a href="https://jquery.com/download/" target="_blank">官网下载jquery</a>,
+        然后给文件取一个名字例如<span>jquery3.3.1.js<span></p> 
+    <p>使用script标签引入这个js,就可以在文档中使用了</p>
+    <p> <span>注意!</span>在下载的时候有三个地址，</p>
+    <img src="./1.png" alt="图片">
+    <ul>
+        <li>1.Download the compressed, production jQuery 3.2.1压缩的用于工程环境的jQuery</li>
+        <li>2.Download the uncompressed, development jQuery 3.2.1未压缩的便于解读的jQuery</li>
+        <li>3.Download the map file for jQuery 3.2.1jQuery映射文件</li>
+    </ul>
+    <p>一般我会下载第一个进行引用，因为第一个jQuery文件最小，加载快</p>
+    <h2>jquery使用：</h2>
+    <p>如何使用 jQuery 获取页面中 id 为 xxx 的元素</p> 
+    <p>很简单使用 <pre>$('#xxx')</pre></p>
+    <p>下面这段代码可以实现点击这个button，弹出一个提示框，内容为欢迎你！</p>
+    <pre>
+            &lt;button&gt; id="xxx">按钮&lt;/button&gt;
+            &lt;script&gt;
+            $('#xxx').onclick=function(){
+                alert('欢迎你')
+            }
+            &lt;/script&gt;
+    </pre>
+    <button id="xxx">按钮</button>
+    <script>
+        console.log($('#xxx')[0])
+        $('#xxx')[0].onclick=function(){
+            alert('欢迎你')
+        }
+    </script>     
+</body>
+</html>
