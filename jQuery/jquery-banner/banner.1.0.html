@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>banner.1.0</title>
+    <script src="./3.3.1jquery.js"></script>
+    <style>
+        *{padding:0;margin:0;box-sizing: border-box;}
+        h1{text-align: center;margin: 100px 0;}
+        main{
+            margin: 0 auto;
+            padding:  10px 20px;
+            max-width:980px;
+            max-height: 700px;
+            background: rgba(148, 146, 143,0.5);   
+        }
+        main .window{
+            width: 300px;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+        main .images{
+            display: flex;
+            align-items:flex-start; 
+            transition:all 0.5s;  
+        }
+        main .pages{
+            display: flex;
+            justify-content: center;
+        }
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>banner图</h1>
+    </header>
+    <main>
+        <div class="window">
+            <div id="images" class="images">
+                <!-- 图片比例3:4 -->
+                <img src="./5.jpg" alt="picture1" width="300">
+                <img src="./6.jpg" alt="picture2" width="300">
+                <img src="./7.jpg" alt="picture3" width="300">
+                <img src="./8.jpg" alt="picture4" width="300">
+            </div>
+        
+            <div class="pages">
+                <span id="buttons">
+                    <span>第1页</span>
+                    <span>第2页</span>
+                    <span>第3页</span>
+                    <span>第4页</span>
+                </span>
+            </div>
+        </div>
+    </main>
+    <script src="./banner.js"></script>
+</body>
+</html>
