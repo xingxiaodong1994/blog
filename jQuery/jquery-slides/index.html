@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>无缝轮播</title>
+    <script src="./3.3.1jquery.js"></script>
+    <style>
+        .window{
+            width: 300px;
+            height: 400px;
+            margin:50px auto;
+            overflow: hidden;
+            border:1px solid black;
+        }
+        .images{
+            position: relative;
+            
+        }
+        .images > img{
+            position: absolute;
+            top:0;
+            left:100%;
+            transition:all 0.5s;         
+        }
+        .images > img.current{
+            z-index: 1;
+            left:0;    
+        }
+        .images > img.leave{
+            left:-100%;
+        }
+        .images > img.enter{
+            z-index: -1;
+            left:100%;
+        }
+    </style> 
+</head>
+<body>
+    <div class="window">
+        <div class="images">
+            <img id='images1' src="./5.jpg" alt="picture" width="300" height="400">
+            <img id='images2' src="./6.jpg" alt="picture" width="300" height="400">
+            <img id='images3' src="./7.jpg" alt="picture" width="300" height="400">
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
