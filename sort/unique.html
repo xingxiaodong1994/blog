@@ -11,7 +11,7 @@
         var arr=[1,5,2,3,4,2,3,1,3,4,]
         unique(arr)
 
-        //函数1：
+        //方法1：
        function unique(arr){
             let hash={}
             let number
@@ -24,7 +24,7 @@
                 }
             }
             arr=arr.join('').split('')
-            arr=arr.map((n)=>{return +n})
+            arr=arr.map(function(n) {return +n})
             console.log(arr)
        }  
          
