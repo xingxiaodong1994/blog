@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组去重</title>
+</head>
+<body>
+    <script>
+        var arr=[1,5,2,3,4,2,3,1,3,4,]
+        unique(arr)
+
+        //函数1：
+       function unique(arr){
+            let hash={}
+            let number
+            for(let i=0;i<arr.length;i++){
+                number=arr[i];
+                if(hash[number]===1){
+                   arr[i]=null;
+                }else{
+                   hash[number]=1;
+                }
+            }
+            arr=arr.join('').split('')
+            arr=arr.map((n)=>{return +n})
+            console.log(arr)
+       }  
+         
+    </script>
+</body>
+</html>
