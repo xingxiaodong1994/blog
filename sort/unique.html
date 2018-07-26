@@ -8,9 +8,10 @@
 </head>
 <body>
     <script>
-        var arr=[1,5,2,3,4,2,3,1,3,4,]
-        unique(arr)
-
+        var array=[1,5,2,3,4,2,3,1,3,4]
+       // unique(array);
+        unique1(array);
+       
         //方法1：
        function unique(arr){
             let hash={}
@@ -23,10 +24,18 @@
                    hash[number]=1;
                 }
             }
-            arr=arr.join('').split('')
-            arr=arr.map(function(n) {return +n})
+            arr=arr.join('').split('');
+            arr=arr.map(function(n) {return +n});
             console.log(arr)
        }  
+
+       //方法2
+       function unique1(arr){
+            let set=new Set(arr)
+            arr=[...set]
+            console.log(arr) 
+       }
+         
          
     </script>
 </body>
