@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</head>
+<body>
+    
+    <h5>你的账户余额是<span id="amount">&&&amount&&&</span></h5>
+    <button id="button">打钱</button>
+  
+
+<script>
+button.addEventListener('click',function(e){ //SRJ :server R? javascript
+    $.ajax({
+        url:'http://127.0.0.1:8888/pay',
+        dataType:'jsonp',
+        success:function(response){
+            amount.innerText=amount.innerText-1
+            console.log(response)
+        }
+    })
+})
+   
+    // button.addEventListener('click',function(e){//SRJ :server R? javascript
+    //     let functionName='andy'+parseInt(Math.random()*100000,10)
+    //     window[functionName]= function (e){
+    //         amount.innerText=amount.innerText-1
+    //         alert(e.success)
+    //     }
+    //     let script =document.createElement('script')
+    //     script.src='/pay?callback='+functionName
+    //     document.body.appendChild(script)
+    //     script.onload=function(e){
+    //         //debugger
+    //         e.currentTarget.remove()
+    //         delete window[functionName]
+    //     }
+    //     script.onerror=function(){
+    //         alert('fail')
+    //         delete window[functionName]
+    //     }
+    // })
+
+    //约定：callbackName->callback
+    //yyy->随机数 
+    //jsonp 通过动态创建script实现的，创建script时候只能用GET请求，无法POST。
+    //jsonp 是一种向后端请求数据的方法，它通过动态创建script来向后端发起一个GET请求,
+    //后端通过回调函数把属于用JSON格式的数据当做参数传给前端
+
+
+
+
+
+
+
+        // let image=document.createElement('img')
+        // image.src='/pay'
+        // image.onload=function(){
+        //     alert('打钱成功')
+        //     amount.innerText=amount.innerText-1
+        // }
+        // image.onerror=function(){
+        //     alert('打钱失败')
+        // }
+    
+</script>
+<script src="/main.js"></script>
+</body>
+</html>
