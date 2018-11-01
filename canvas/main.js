@@ -165,12 +165,14 @@ function autoSetCanvasSize(canvas){
      // context.fillRect(10,10,100,100);//rectangle
      // //橡皮擦
      // //context.clearRect(50,50,10,10);
+
      // context.fillStyle='red';
      // context.beginPath();
      // context.moveTo(240,240)
      // context.lineTo(300,240)
      // context.lineTo(300,300)
      // context.fill()
+     //context.closePath()
     
 }
 

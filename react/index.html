@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+    <title>react</title>
+    <style>
+        .red{
+            color: red;
+            border:1px solid green;
+        }
+        .parent{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+
+
+    <!-- <div    id="result">0</div>
+    <button id="add">+</button>
+    <button id="minus">-</button> -->
+    <script>
+        //let h=React.createElement
+        let number = 0
+        let onClickButton=()=>{
+            number+=1
+            render()
+        }
+        let onClickButton2=()=>{
+            number -=1
+            render()
+        }
+        render()
+        function render(){ 
+            //let span =h('span',{className:'red'},number)
+            //let button=h('button',{onClick:onClickButton},'+')
+            //let button2=h('button',{onClick:onClickButton2},'-')
+            
+            //let div = 
+                // React.createElement(
+                //     'div',
+                //     {className:'parent'},
+                //     React.createElement('span',{className:'red'},number),
+                //     React.createElement('button',{onClick:onClickButton},'+'),
+                //     React.createElement('button',{onClick:onClickButton2},'-')
+                // )
+
+                // <div class='parent'>
+                //     <span class='red'>{number}</span>
+                //     <button onClick={onClickButton}>+</button>
+                //     <button onClick={onClickButton2}>-</button>
+                // </div>
+            ReactDOM.render(
+                <div class='parent'>
+                    <span class='red'>{number}</span>
+                    <button onClick={onClickButton}>+</button>
+                    <button onClick={onClickButton2}>-</button>
+                </div>,
+                document.querySelector('#root'))
+        }
+
+
+
+
+        // let result = document.querySelector("#result")
+        // let add = document.querySelector('#add')
+        // let minus= document.querySelector('#minus')
+        // add.addEventListener('click',function(){
+        //     let number = parseInt(result.innerHTML,10)
+        //     number += 1
+        //     result.innerHTML=number
+        // })
+        // minus.addEventListener('click',function(){
+        //     let number = parseInt(result.innerHTML,10)
+        //     number -= 1
+        //     result.innerHTML=number
+        // })
+    </script>
+   
+</body>
+</html>
