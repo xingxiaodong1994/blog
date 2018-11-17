@@ -8,30 +8,48 @@
 </head>
 <body>
     <script>      
-        var bubble=function bubble(arr){
-            //冒泡算法
-            // 第一步 声明变量与赋值
+        // var bubble=function bubble(arr){
+        //     //冒泡算法
+        //     // 第一步 声明变量与赋值
             
-            var time;
-            var index;
-            var exchange;
-            //外循环：判断轮数
-            for(let time=1;time<arr.length;time++){
-                //内循环 判断最大值
-                for (let index = 0; index < arr.length-time; index++) {
-                    // if语句 摸头大法
-                    if (arr[index]<arr[index+1]) {
+        //     var time;
+        //     var index;
+        //     var exchange;
+        //     //外循环：判断轮数
+        //     for(let time=1;time<arr.length;time++){
+        //         //内循环 判断最大值
+        //         for (let index = 0; index < arr.length-time; index++) {
+        //             // if语句 摸头大法
+        //             if (arr[index]<arr[index+1]) {
 
-                    } else {
-                         exchange=arr[index];
-                         arr[index]=arr[index+1];
-                         arr[index+1]=exchange;
+        //             } else {
+        //                  exchange=arr[index];
+        //                  arr[index]=arr[index+1];
+        //                  arr[index+1]=exchange;
+        //             }
+
+        //         }
+        //     }
+        //     console.log(arr)
+
+        // }
+        function bubble(array){
+            let turn
+            let index
+            let middle
+            for(turn=0;turn<array.length-1;turn++){
+                for(index=0;index<array.length-turn-1;index++){
+                    if(array[index] <= array[index+1]){
+
+                    }else{
+                        middle=array[index+1]
+                        array[index+1]=array[index]
+                        array[index]=middle
                     }
-
                 }
             }
-            console.log(arr)
-
+            console.log(array)
+            return array
         }
         var a=[6,2,4,5,3,1,15,17,23,7,456];
         bubble(a);
