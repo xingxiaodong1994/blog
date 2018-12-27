@@ -12,106 +12,102 @@
 <body>
     <pre id="code"></pre>
     <script src="./prims/prism.js"></script><script>
-/*往#code和style标签中添加code代码*/   
-function writeCode(prefix,code,fn){
+    /*往#code和style标签中添加code代码*/   
+    function writeCode(prefix,code,fn){
+            domCode=document.querySelector('#code')
+            styleTag=document.querySelector('#styleTag')
+           // console.log('设置闹钟')
+           let n=0;
+           var id=setInterval(()=>{
+               n++;
+               //console.log('写代码')
+               domCode.innerHTML=Prism.highlight(prefix+code.substring(0,n), Prism.languages.css, 'css');
+               styleTag.innerHTML=prefix+code.substring(0,n)
+               domCode.scrollTop=domCode.scrollHeight //或者写10000
+               if(n>=code.length){window.clearInterval(id); fn()}
 
+           },10)
+    }     
+    var result=`/* 
+     * 面试官你好，我是XXX
+     * 只用文字作做我介绍太单调了
+     * 我就用代码来介绍吧
+     * 首先准备一些样式
+     */
+    *{
+      transition: all 1s;
+    }
+    html{
+      background: #eee;
+    }
+    #code{
+      padding: 16px;
+      border: 1px solid #aaa;
+    }
+    /*我需要一点代码高亮*/
+    .token.selector{ color: #690; }
+    .token.property{ color: #905; }
+    /*加点3D效果*/
+    #code{
+        transform:rotate(360deg);
+    }
+    /*不玩了，我来介绍一下我自己吧*/
+    /*我需要一张白纸*/
     
-        domCode=document.querySelector('#code')
-        styleTag=document.querySelector('#styleTag')
-       // console.log('设置闹钟')
-       let n=0;
-       var id=setInterval(()=>{
-           n++;
-           //console.log('写代码')
-           domCode.innerHTML=Prism.highlight(prefix+code.substring(0,n), Prism.languages.css, 'css');
-           styleTag.innerHTML=prefix+code.substring(0,n)
-           domCode.scrollTop=domCode.scrollHeight //或者写10000
-           if(n>=code.length){window.clearInterval(id); fn()}
-           
-       },10)
-}
-         
-       
-var result=`/* 
- * 面试官你好，我是XXX
- * 只用文字作做我介绍太单调了
- * 我就用代码来介绍吧
- * 首先准备一些样式
- */
-*{
-  transition: all 1s;
-}
-html{
-  background: #eee;
-}
-#code{
-  padding: 16px;
-  border: 1px solid #aaa;
-}
-/*我需要一点代码高亮*/
-.token.selector{ color: #690; }
-.token.property{ color: #905; }
-/*加点3D效果*/
-#code{
-    transform:rotate(360deg);
-}
-/*不玩了，我来介绍一下我自己吧*/
-/*我需要一张白纸*/
-
-`
-writeCode('',result,()=>{
-    //console.log('执行fn')
-    createPaper(()=>{
-        console.log('paper有了')
-        writeCode(result,result2,()=>{ writeMarkdown(md,()=>{})})
+    `
+    writeCode('',result,()=>{
+        //console.log('执行fn')
+        createPaper(()=>{
+            console.log('paper有了')
+            writeCode(result,result2,()=>{ writeMarkdown(md,()=>{})})
+        })
     })
-})
-var result2=`
-#code{
-    position:fixed; 
-    left:0;
-    width:50%;
-    height:100%;
-}
-#paper{
-    position:fixed; 
-    right:0;
-    width:50%;
-    height:100%;
-    background:#ddd;
-}
-#paper > .content{
-    background:white;
-    width:100%;
-    height:100%;
-}
-`
-var md=`
-    # 标题一
-`
-function  createPaper(fn){
-     let paper = document.createElement('div')
-     paper.id='paper'
-     document.body.appendChild(paper)
-     let content=document.createElement('pre')
-     content.className='content'
-     paper.appendChild(content)
-     fn.call()
- } 
- function writeMarkdown(markdown,fn){
-     let domPaper=document.querySelector('#paper>.content')
-      // console.log('设置闹钟')
-      let n=0;
-       var id=setInterval(()=>{
-           n++;
-           //console.log('写代码')
-           //domPaper.innerHTML=Prism.highlight(markdown.substring(0,n), Prism.languages.markDown, 'markdown');
-           domPaper.innerHTML=markdown.substring(0,n)
-           domPaper.scrollTop=domPaper.scrollHeight //或者写10000
-           if(n>=markdown.length){window.clearInterval(id); fn()}
-           
-       },10)
- }
+    var result2=`
+    #code{
+        position:fixed; 
+        left:0;
+        width:50%;
+        height:100%;
+    }
+    #paper{
+        position:fixed; 
+        right:0;
+        width:50%;
+        height:100%;
+        background:#ddd;
+    }
+    #paper > .content{
+        background:white;
+        width:100%;
+        height:100%;
+    }
+    `
+    var md=`
+        # 标题一
+    `
+    function  createPaper(fn){
+         let paper = document.createElement('div')
+         paper.id='paper'
+         document.body.appendChild(paper)
+         let content=document.createElement('pre')
+         content.className='content'
+         paper.appendChild(content)
+         fn.call()
+     } 
+     function writeMarkdown(markdown,fn){
+         let domPaper=document.querySelector('#paper>.content')
+          // console.log('设置闹钟')
+          let n=0;
+           var id=setInterval(()=>{
+               n++;
+               //console.log('写代码')
+               //domPaper.innerHTML=Prism.highlight(markdown.substring(0,n), Prism.languages.markDown, 'markdown');
+               domPaper.innerHTML=markdown.substring(0,n)
+               domPaper.scrollTop=domPaper.scrollHeight //或者写10000
+               if(n>=markdown.length){window.clearInterval(id); fn()}
+               
+           },10)
+     }
 //这样写fn2会在写代码之前执行。因为写代码有延时，是异步任务！！！
 //异步就是不等结果，执行下面代码，回调可以拿到异步结果，注意回调也可以拿同步结果
 
